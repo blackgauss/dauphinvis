@@ -10,9 +10,9 @@ This is an outline of the project. To see dependecnces see (INSERT FILENAME).
 
 ## Motion detection
 Currently, we are deciding among the following methods:
-    ### PIR Sensor
-        On testing, this gives the most false triggers.
-    ### Ultrasonic Sensor
-        This is the current method in progress.
-    ### Camera Vision
-        This is computational expensive / we don't know how to implement cheaply.
+   ### PIR Sensor
+   On testing, this gives the most false triggers.
+   ### Camera Vision
+   This is computationally expensive / we don't know how to implement cheaply.
+   ### Ultrasonic Sensor
+   This is the current method in progress.
