@@ -8,11 +8,11 @@ This is an outline of the project. To see dependecnces see (INSERT FILENAME).
 - [ ] Find long-lasting power solution
 - [ ] Build enclosure
 
-+ Motion detection
+## Motion detection
 Currently, we are deciding among the following methods:
-    + PIR Sensor
+    ### PIR Sensor
         On testing, this gives the most false triggers.
-    + Ultrasonic Sensor
+    ### Ultrasonic Sensor
         This is the current method in progress.
-    + Camera Vision
+    ### Camera Vision
         This is computational expensive / we don't know how to implement cheaply.
