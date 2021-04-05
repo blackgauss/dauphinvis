@@ -1,8 +1,14 @@
 # dauphinvis
 An open-source nature photography camera.
 
-# Parts
+# Microcontrollers
 + Esp32-cam
++ Arudino Nano
+
+# Sensors / Cameras
++ HC-R04 Ultrasonic Sensor
++ PIR Motion Sensor
++ OV2640 Camera
 
 # External Arduino Libraries Used
 + https://github.com/aster94/GoProControl
