@@ -16,4 +16,4 @@ An open-source nature photography camera.
 
 # Sources
 + [EloquentArduino Camera Motion Detection Guide](https://github.com/eloquentarduino/EloquentArduino/tree/master/examples/ESP32CameraNaiveMotionDetection)
-+ [mad-sceince Camera Trap Guide]https://mad-science.wonderhowto.com/how-to/wildlife-photography-with-diy-motion-triggered-camera-0134792/
++ [mad-sceince Camera Trap Guide](https://mad-science.wonderhowto.com/how-to/wildlife-photography-with-diy-motion-triggered-camera-0134792/)
