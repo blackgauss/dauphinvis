@@ -13,13 +13,13 @@ GoProControl gp("goshmohero", "gopromath", HERO3);
 int maxPictures = 5;
 int picNumber = 0;
 
-void connect() {
-  int waitTime = 0;
-  while (!gp.isConnected() && waitTime < 1) {
+void connectGoPro() {
+  while (!gp.isConnected()) {
     gp.begin();
     delay(1000);
-    waitTime++;
   }
+  Serial.println("Connected");
+  digitalWrite(2, HIGH);
 }
 
 void setup() {
@@ -27,19 +27,19 @@ void setup() {
   Serial.begin(115200);
   HCSR04.begin(trigPin, echoPin, echoCount);
   pinMode(2, OUTPUT);
-  while (!gp.isConnected()) {
-    gp.begin();
-    delay(250);
-  }
-  Serial.println("Connected");
-  digitalWrite(2, HIGH);
+  
+  connectGoPro()
+  
   gp.setMode(PHOTO_MODE);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  // Take measurement
   double* distances = HCSR04.measureDistanceCm();
-  if (distances[0] > 0 && distances[0] < 65) {
+
+  
+  if (distances[0] > 0 && distances[0] < 85) {
     switch (objectState) {
       default:
         break;
@@ -53,8 +53,12 @@ void loop() {
         
       case 1:
         Serial.println("Same Object");
+        gp.shoot();
+        delay(2000);
+        gp.shoot();
+        delay(5000);
+        gp.shoot();
         break;
-      
     }
   }
   else {
@@ -72,13 +76,13 @@ void loop() {
         break;
     }
   }
+  
   Serial.println(distances[0]);
   if (!gp.isConnected()) {
     for (int i = 0; i < 3; i++) {
       digitalWrite(2, LOW);
       delay(500);
     }
-    connect();
+    connectGoPro();
   }
-  delay(500);
 }
